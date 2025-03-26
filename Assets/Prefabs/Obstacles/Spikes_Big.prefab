@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1431303351331589499}
   - component: {fileID: 1717248845472727475}
   m_Layer: 0
-  m_Name: Spikes
+  m_Name: Spikes_Big
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.522, y: -0.998, z: 0.03791906}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.8756251, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8811919430457543902}
