@@ -9,11 +9,19 @@ public class PlayerCollisions : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
         if(collision.transform.tag == "Obstacle")
         {
-            gameObject.SetActive(false);
-        }
 
+            gameObject.SetActive(false);
+            GameManager.Instance.isPlaying = false;
+            GameManager.Instance.PauseObstacles();
+        }
+        if(collision.GetComponent<Collectible>() == true)
+        {
+            collision.GetComponent<Collectible>().Collected();
+        }
         
     }
 
