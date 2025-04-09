@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
     public GameObject velocity;
 
 
+
+    private void awake()
+    {
+        if (Instance == null) Instance = this;
+    }
     public string ScoreDisplay()
     {
         return Mathf.RoundToInt(currentScore).ToString();
@@ -69,7 +74,10 @@ public class GameManager : MonoBehaviour
         currentScore = 0;
         player.SetActive(true);
         currentCollected = 0;
-     
+   
+
+        activeObstacles.Clear();
+        ResumeObstacles();
     }
 
     public void PauseObstacles()
@@ -88,6 +96,7 @@ public class GameManager : MonoBehaviour
         {
             Rigidbody2D obstacleRB = obstacle.GetComponent<Rigidbody2D>();
             obstacleRB.velocity = Vector2.left * currentObstacleSpeed;
-        }    
+        }  
+        canSpawn = true;
     }
 }
