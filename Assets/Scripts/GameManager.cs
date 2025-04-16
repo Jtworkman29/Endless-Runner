@@ -55,20 +55,29 @@ public class GameManager : MonoBehaviour
             currentScore += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown("j"))
+        if (Input.GetKeyDown("r"))
         {
-            ResetGame();
+           
+            if(isPlaying == true)
+            {
+                ResetScene();
+            }
+            else
+            {
+                ResetScene();
+                UserInterfaceManager.Instance.GameOverDisplay();
+            }
         }
 
     }
 
     public void GameOver()
     {
-        currentScore = 0;
         isPlaying = false;
+        UserInterfaceManager.Instance.GameOverDisplay();
     }
 
-    public void ResetGame()
+    public void ResetScene()
     {
         isPlaying = true;
         currentScore = 0;
