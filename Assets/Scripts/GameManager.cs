@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -87,6 +88,7 @@ public class GameManager : MonoBehaviour
 
         activeObstacles.Clear();
         ResumeObstacles();
+        SceneManager.LoadScene(0);
     }
 
     public void PauseObstacles()
